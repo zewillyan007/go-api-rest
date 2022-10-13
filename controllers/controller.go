@@ -19,28 +19,6 @@ func AllPersons(w http.ResponseWriter, r *http.Request) {
 	p := []models.Persons{}
 	database.DB.Find(&p)
 	json.NewEncoder(w).Encode(p)
-
-	// db := database.ConnectDatabase()
-	// allPersons, err := db.Query("select * from single_people sp")
-	// if err != nil {
-	// 	panic(err.Error())
-	// }
-
-	// p := models.SinglePerson{}
-
-	// for allPersons.Next() {
-	// 	var id int
-	// 	var nameperson, story string
-
-	// 	err := allPersons.Scan(&id, &nameperson, &story)
-	// 	if err != nil {
-	// 		panic(err.Error())
-	// 	}
-
-	// 	p.Id = id
-	// 	p.NamePerson = nameperson
-	// 	p.Story = story
-
 }
 
 func ReturnOnePerson(w http.ResponseWriter, r *http.Request) {
